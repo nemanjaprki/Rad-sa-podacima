@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+ 
+<html lang="en"> 
+
+  <head> 
+       <meta charset="UTF-8"> 
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  </head>
+
+     <body>      
+      <textarea id="textInput" cols="30" rows="10"></textarea> 
+
+      <script>
+
+       var textArea = document.getElementById("textInput");
+        
+       fetch('quiz.json').then(function (response) {
+               return response.text();
+       }).then(function (text) {
+               textArea.innerHTML = text;
+       }).catch(function (err) {
+               textArea.innerHTML = ('Fetch problem:' + err.message); 
+       });
+       
+      </script>
+      
+        
+    
+
+   </body>
+
+
+</html>
